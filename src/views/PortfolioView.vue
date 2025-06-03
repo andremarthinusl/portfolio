@@ -27,29 +27,35 @@ export default {
   }
 }
 </script>
-<template>  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-blue-50 mx-3">
+<template>  
+<div class="px-5 py-5 md:px-12 md:py-10 text-left mx-3" :class="$root.isLightMode ? 'text-gray-700' : 'text-blue-50'">
     <article data-page="about">
       <header>          <div
-          class="text-2xl font-bold text-white mb-10 fadein-bot title-section flex items-center justify-center flex-col">
-          <div class="h-[1px] w-10 bg-blue-500 md:w-20 aos-init aos-animate"></div>
-          <h4>Past Project Experience</h4><h4 class="text-base font-normal text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-blue-500">
+          class="text-2xl font-bold mb-10 fadein-bot title-section flex items-center justify-center flex-col"
+          :class="$root.isLightMode ? 'text-gray-800' : 'text-white'">
+          <div class="h-[1px] w-10 bg-blue-500 md:w-20 aos-init aos-animate"></div>          
+          <h4>Past Project Experience</h4>
+          <h4 class="text-base font-normal text-transparent bg-clip-text"
+            :class="$root.isLightMode ? 'bg-gradient-to-r from-gray-700 to-blue-500' : 'bg-gradient-to-r from-slate-100 to-blue-500'">
             Explore the projects I've worked on so far</h4>
         </div>
       </header>
       <section>
         <div>
-          <div class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-3 xl:grid-cols-3 xl:gap-3 2xl:gap-5 fade-zoom-in">
-            <div v-for="item in items" :key="item.id">
+          <div class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-3 xl:grid-cols-3 xl:gap-3 2xl:gap-5 fade-zoom-in">            <div v-for="item in items" :key="item.id">
               <div
-                class="item-card flex flex-col items-center gap-2 bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] rounded-xl text-blue-50 md:gap-3 px-5 py-5 lg:px-5 ">                <div class="flex items-center justify-center p-0 h-full w-full lg:p-0 zoom-in">
+                class="item-card flex flex-col items-center gap-2 rounded-xl md:gap-3 px-5 py-5 lg:px-5"
+                :class="$root.isLightMode ? 'bg-white hover:bg-gray-100 border border-gray-200 text-gray-800' : 'bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] text-blue-50'">
+                <div class="flex items-center justify-center p-0 h-full w-full lg:p-0 zoom-in">
                   <img alt="HTML" loading="lazy" decoding="async" data-nimg="1" class="drop-shadow-xl rounded-xl"
                     :src="'/img/portfolio-' + item.imageUrl + '.png'">
                 </div>
                 <div class="w-full flex flex-col gap-2 items-center text-sm md:text-base lg:text-lg">
                   <div class="title-text font-medium text-secondary">{{ item.name }}
                   </div>
-                  <div class="w-full text-left text-[10px] text-[#c1c1c1] md:text-xs lg:text-sm">
-                    {{ item.status }}</div>                  <div class="w-full mt-4 text-normal text-sm text-left text-blue-300">
+                  <div class="w-full text-left text-[10px] md:text-xs lg:text-sm"
+                    :class="$root.isLightMode ? 'text-gray-600' : 'text-[#c1c1c1]'">
+                    {{ item.status }}</div><div class="w-full mt-4 text-normal text-sm text-left text-blue-300">
                     {{ item.tech }}
                   </div>
                   <div class="w-full flex justify-end">
@@ -81,7 +87,8 @@ export default {
       </div>
     </section>
   </article>
-</div></template>
+</div>
+</template>
 
 <style>
 .item-card:hover {

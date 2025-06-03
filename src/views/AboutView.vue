@@ -95,12 +95,11 @@ export default {
   }
 }
 </script>
-<template>
-  <div    class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#383838] rounded-3xl text-blue-50 mx-3 mb-5">
+<template>  <div :class="[$root.isLightMode ? 'bg-white border-gray-200 text-gray-700' : 'bg-[#1e1e1f] border-[#383838] text-blue-50']" class="px-5 py-5 md:px-12 md:py-10 text-left border rounded-3xl mx-3 mb-5">
     <article data-page="about">
 
       <header>
-        <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
+        <div class="text-2xl font-bold mb-5 fadein-bot title-section flex items-center" :class="$root.isLightMode ? 'text-gray-800' : 'text-white'">
           About Me &nbsp;          <div class="h-[1px] w-32 bg-blue-500 md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
             data-aos-duration="600"></div>
         </div>
@@ -127,24 +126,24 @@ export default {
       </section>
 
     </article>
-  </div>
-  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-blue-50 mx-3">
+  </div>  <div class="px-5 py-5 md:px-12 md:py-10 text-left mx-3" :class="$root.isLightMode ? 'text-gray-700' : 'text-blue-50'">
     <article data-page="about">
       <header>
-        <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
+        <div class="text-2xl font-bold mb-5 fadein-bot title-section flex items-center" :class="$root.isLightMode ? 'text-gray-800' : 'text-white'">
           <div class="h-[1px] w-10 bg-blue-500 md:w-20 aos-init aos-animate" data-aos="zoom-in-left"
             data-aos-duration="600"></div>
           &nbsp; Skills
         </div>
       </header>
       <section>
-        <div>
-          <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-5">
-            <li class="mr-2">              <button class="inline-block px-4 py-3 rounded-lg hover:text-white"
-                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
+        <div>          <ul class="flex flex-wrap text-sm font-medium text-center mb-5" :class="$root.isLightMode ? 'text-gray-600' : 'text-gray-400'">
+            <li class="mr-2">              <button class="inline-block px-4 py-3 rounded-lg" 
+                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 1, 'hover:text-gray-900': $root.isLightMode, 'hover:text-white': !$root.isLightMode }" 
+                @click="activeTab = 1">Tech Stack</button>
             </li>
-            <li class="mr-2">              <button class="inline-block px-4 py-3 rounded-lg hover:text-white"
-                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Tools</button>
+            <li class="mr-2">              <button class="inline-block px-4 py-3 rounded-lg" 
+                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 2, 'hover:text-gray-900': $root.isLightMode, 'hover:text-white': !$root.isLightMode }" 
+                @click="activeTab = 2">Tools</button>
             </li>
           </ul>
         </div>
