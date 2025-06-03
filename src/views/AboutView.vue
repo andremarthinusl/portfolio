@@ -100,7 +100,8 @@ export default {
 
       <header>
         <div class="text-2xl font-bold mb-5 fadein-bot title-section flex items-center" :class="$root.isLightMode ? 'text-gray-800' : 'text-white'">
-          About Me &nbsp;          <div class="h-[1px] w-32 bg-blue-500 md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
+          About Me &nbsp;          
+          <div class="h-[1px] w-32 bg-blue-500 md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
             data-aos-duration="600"></div>
         </div>
       </header>
