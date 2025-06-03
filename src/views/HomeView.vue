@@ -1,6 +1,7 @@
 <template>
   <main    class="mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row md:gap-4 md:justify-center min-h-[65vh] md:min-h-[80vh]">
-    <div class="space-y-2 text-center md:text-left px-10">      <p class="text-blue-400">Hello World, I'm</p>
+    <div class="space-y-2 text-center md:text-left px-10">      
+      <p class="text-blue-400">Hello World, I'm</p>
       <h1 class="text-2xl font-bold md:text-3xl lg:text-5xl fadein-up" :class="$root.isLightMode ? 'text-gray-800' : 'text-white'" style="line-height: 1.1;">Andre Marthinus Lumempouw</h1>
       <div class="py-1 md:py-2">        <h1 class="typewrite text-xl font-semibold text-transparent bg-clip-text md:text-2xl fadein-up"
           :class="$root.isLightMode ? 'bg-gradient-to-r from-gray-700 to-blue-500' : 'bg-gradient-to-r from-slate-100 to-blue-500'"
@@ -8,7 +9,8 @@
           <span class="wrap">{{ txt }}</span>        </h1>
       </div>
       <p :class="$root.isLightMode ? 'text-gray-700' : 'text-white'" class="pr-4 fade-in-from-left">Welcome to My personal website. <span class="wave">👋🏼</span></p>
-      <br>      <!-- <button
+      <br>      
+      <!-- <button
         class="fadein-bot fade-500 flex items-center py-2 px-4 mx-auto text-sm font-medium rounded-lg border transition duration-300 md:py-2.5 md:px-5 md:mx-0 text-blue-400 border-blue-400 hover:bg-blue-400 hover:bg-opacity-10 bg-transparent focus:outline-none w-fit"><svg
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-2 w-4 h-4">
           <path fill-rule="evenodd"
@@ -18,7 +20,7 @@
             d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z">
           </path>
         </svg>Download Resume</button> -->    
-      </div>    
+    </div>    
     <div class="flex justify-center md:justify-start fadein-right md:pl-0 md:ml-0"><img alt="avatar" fetchpriority="high" width="300" height="300" decoding="async" data-nimg="1"
         class="w-10/12 md:w-[90%] md:h-auto rounded-full border-4 border-blue-400 pict" src="https://avatars.githubusercontent.com/u/192032451?v=4">
     </div>

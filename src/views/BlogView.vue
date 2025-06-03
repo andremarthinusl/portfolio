@@ -23,7 +23,8 @@
         </div>
       </div>      <div class="w-full md:w-1/3 h-fit p-8 md:sticky md:top-24">
         <!-- Sidebar -->
-        <div class="flex flex-col text-left">          <div class="text-transparent bg-clip-text"
+        <div class="flex flex-col text-left">          
+          <div class="text-transparent bg-clip-text"
             :class="$root.isLightMode ? 'bg-gradient-to-r from-gray-700 to-blue-500' : 'bg-gradient-to-r from-slate-100 to-blue-500'">
             Let's share experiences, stories, and knowledge together.
           </div>
