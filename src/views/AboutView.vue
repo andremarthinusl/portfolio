@@ -41,7 +41,7 @@ export default {
           name: "VueJS",
           imageUrl:
             "https://cdn.iconscout.com/icon/free/png-256/free-vue-282497.png?f=webp",
-          status: "Pre-Intermediate",
+          status: "Intermediate",
         },
         {
           id: 7,
