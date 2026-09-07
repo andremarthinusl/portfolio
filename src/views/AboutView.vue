@@ -28,7 +28,7 @@ export default {
           name: "Javascript",
           imageUrl:
             "https://cdn.icon-icons.com/icons2/2415/PNG/512/javascript_original_logo_icon_146455.png",
-          status: "Advance",
+          status: "Advanced",
         },
         {
           id: 5,
@@ -108,233 +108,309 @@ export default {
       ],
     };
   },
+  computed: {
+    light() {
+      return this.$root.isLightMode;
+    },
+  },
 };
 </script>
+
 <template>
-  <div
-    :class="[
-      $root.isLightMode
-        ? 'bg-white border-gray-200 text-gray-700'
-        : 'bg-[#1e1e1f] border-[#383838] text-blue-50',
-    ]"
-    class="px-5 py-5 md:px-12 md:py-10 text-left border rounded-3xl mx-3 mb-5"
-  >
-    <article data-page="about">
-      <header>
-        <div
-          class="text-2xl font-bold mb-5 fadein-bot title-section flex items-center"
-          :class="$root.isLightMode ? 'text-gray-800' : 'text-white'"
+  <div class="about-page text-left px-4 md:px-8 pb-32 md:pb-24 pt-6 md:pt-10 max-w-6xl mx-auto">
+    <!-- ============ ABOUT ME ============ -->
+    <section
+      class="relative overflow-hidden rounded-3xl border p-6 md:p-10 fadein-bot"
+      :class="
+        light
+          ? 'bg-white border-gray-200 shadow-sm shadow-gray-200/60'
+          : 'bg-[#161618] border-white/10 shadow-lg shadow-black/30'
+      "
+    >
+      <!-- decorative gradient blob -->
+      <div
+        class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full opacity-20 blur-3xl"
+        :class="light ? 'bg-blue-400' : 'bg-blue-600'"
+      ></div>
+
+      <header class="relative flex items-center gap-3 mb-8">
+        <span class="h-8 w-1.5 rounded-full bg-gradient-to-b from-blue-400 to-blue-600"></span>
+        <h2
+          class="text-2xl md:text-3xl font-bold tracking-tight"
+          :class="light ? 'text-gray-900' : 'text-white'"
         >
-          About Me &nbsp;
-          <div
-            class="h-[1px] w-32 bg-blue-500 md:w-96 aos-init aos-animate"
-            data-aos="zoom-in-left"
-            data-aos-duration="600"
-          ></div>
-        </div>
+          About <span class="text-blue-500">Me</span>
+        </h2>
       </header>
 
-      <section
-        class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center"
+      <div class="relative grid gap-8 md:grid-cols-[280px_1fr] md:gap-12 items-center">
+        <!-- avatar -->
+        <div class="flex justify-center fadein-up">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-blue-500 via-sky-400 to-blue-600 rotate-3 opacity-70"
+            ></div>
+            <img
+              class="relative w-56 md:w-64 rounded-3xl object-cover ring-4 ring-offset-0"
+              :class="light ? 'ring-white' : 'ring-[#161618]'"
+              src="https://avatars.githubusercontent.com/u/192032451?v=4"
+              alt="Andre Marthinus Lumempouw"
+            />
+          </div>
+        </div>
+
+        <!-- bio -->
+        <div>
+          <h3
+            class="text-lg md:text-xl font-semibold mb-1 fadein-up fadein-1"
+            :class="light ? 'text-gray-900' : 'text-gray-100'"
+          >
+            Andre Marthinus Lumempouw
+          </h3>
+          <p class="text-sm font-medium text-blue-500 mb-5 fadein-up fadein-1">
+            Web Developer &amp; Informatics Student
+          </p>
+
+          <div class="space-y-4 text-sm md:text-base leading-relaxed">
+            <p
+              class="fade-in-from-left fadein-1"
+              :class="light ? 'text-gray-600' : 'text-gray-300'"
+            >
+              Hi everyone! My name is Andre Marthinus Lumempouw. I'm a web
+              developer from Balikpapan, Kalimantan Timur. I really enjoy what
+              I do right now — in my opinion, creating programs is not just a
+              job, but also an art that has aesthetic value.
+            </p>
+            <p
+              class="fade-in-from-left fadein-2"
+              :class="light ? 'text-gray-600' : 'text-gray-300'"
+            >
+              I'm passionate about building responsive and user-friendly web
+              applications, and I'm continuously exploring new technologies to
+              grow as a full-stack developer.
+            </p>
+          </div>
+
+          <!-- info chips -->
+          <div class="flex flex-wrap gap-2 mt-6 fadein-up fadein-3">
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium border"
+              :class="
+                light
+                  ? 'bg-blue-50 border-blue-100 text-blue-700'
+                  : 'bg-blue-500/10 border-blue-400/20 text-blue-300'
+              "
+            >
+              <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  d="M10 2a6 6 0 00-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 00-6-6zm0 8.5A2.5 2.5 0 1110 5.5a2.5 2.5 0 010 5z"
+                />
+              </svg>
+              Balikpapan, Indonesia
+            </span>
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium border"
+              :class="
+                light
+                  ? 'bg-gray-50 border-gray-200 text-gray-700'
+                  : 'bg-white/5 border-white/10 text-gray-300'
+              "
+            >
+              <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 3.75a.75.75 0 01.75-.75h15.5a.75.75 0 01.75.75v9.5a.75.75 0 01-.75.75H16v1.75a.75.75 0 01-.75.75h-10.5a.75.75 0 01-.75-.75V14H2.25a.75.75 0 01-.75-.75V3.75zM3 12.5h14v-8H3v8zm5.25 1.5h3.5v1h-3.5v-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Full-Stack Web Developer
+            </span>
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium border"
+              :class="
+                light
+                  ? 'bg-gray-50 border-gray-200 text-gray-700'
+                  : 'bg-white/5 border-white/10 text-gray-300'
+              "
+            >
+              <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 1.75a.75.75 0 01.39.108l8 5a.75.75 0 010 1.284l-8 5a.75.75 0 01-.78 0l-8-5a.75.75 0 010-1.284l8-5A.75.75 0 0110 1.75zM4.25 8.5l5.75 3.595V16a.75.75 0 001.5 0v-3.905L17.25 8.5l-1.5-.938L10 10.905 4.25 7.562l-1.5.938 1.5.001z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Informatics Student
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="mt-12 md:mt-16">
+      <header class="flex items-center gap-3 mb-8 fadein-bot fadein-1">
+        <span class="h-8 w-1.5 rounded-full bg-gradient-to-b from-blue-400 to-blue-600"></span>
+        <h2
+          class="text-2xl md:text-3xl font-bold tracking-tight"
+          :class="light ? 'text-gray-900' : 'text-white'"
+        >
+          Skills
+        </h2>
+      </header>
+
+      <!-- tabs -->
+      <div
+        class="inline-flex rounded-2xl p-1.5 border mb-8 fadein-bot fadein-2"
+        :class="
+          light
+            ? 'bg-gray-100 border-gray-200'
+            : 'bg-[#161618] border-white/10'
+        "
       >
-        <div class="flex justify-center">
-          <img
-            class="w-9/12 rounded-full mb-3 fadein-up"
-            src="https://avatars.githubusercontent.com/u/192032451?v=4"
-            alt="Foto"
-          />
-        </div>
-        <div class="md:w-7/12">
-          <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Andre Marthinus
-            Lumempouw. I'm a web developer from Balikpapan, Kalimantan Timur. I
-            really enjoy what I do right now, in my opinion, creating programs
-            is not just a job, but also an art that has aesthetic value
-          </p>
-          <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; I'm passionate about building responsive and
-            user-friendly web applications, and I'm continuously exploring new
-            technologies to grow as a full-stack developer
-          </p>
-        </div>
-      </section>
-    </article>
-  </div>
-  <div
-    class="px-5 py-5 md:px-12 md:py-10 text-left mx-3"
-    :class="$root.isLightMode ? 'text-gray-700' : 'text-blue-50'"
-  >
-    <article data-page="about">
-      <header>
+        <button
+          class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300"
+          :class="
+            activeTab === 1
+              ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30'
+              : light
+              ? 'text-gray-600 hover:text-gray-900'
+              : 'text-gray-400 hover:text-gray-200'
+          "
+          @click="activeTab = 1"
+        >
+          Tech Stack
+        </button>
+        <button
+          class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300"
+          :class="
+            activeTab === 2
+              ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30'
+              : light
+              ? 'text-gray-600 hover:text-gray-900'
+              : 'text-gray-400 hover:text-gray-200'
+          "
+          @click="activeTab = 2"
+        >
+          Tools
+        </button>
+      </div>
+
+      <!-- skill grids -->
+      <transition name="tab-fade" mode="out-in">
         <div
-          class="text-2xl font-bold mb-5 fadein-bot title-section flex items-center"
-          :class="$root.isLightMode ? 'text-gray-800' : 'text-white'"
+          v-if="activeTab === 1"
+          key="tech"
+          class="grid grid-cols-2 gap-3 md:gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
         >
           <div
-            class="h-[1px] w-10 bg-blue-500 md:w-20 aos-init aos-animate"
-            data-aos="zoom-in-left"
-            data-aos-duration="600"
-          ></div>
-          &nbsp; Skills
-        </div>
-      </header>
-      <section>
-        <div>
-          <ul
-            class="flex flex-wrap text-sm font-medium text-center mb-5"
-            :class="$root.isLightMode ? 'text-gray-600' : 'text-gray-400'"
+            v-for="(item, i) in tech"
+            :key="item.id"
+            class="skill-card group relative flex flex-col items-start gap-3 rounded-2xl border p-4 md:p-5 cursor-pointer transition-all duration-300"
+            :class="
+              light
+                ? 'bg-white border-gray-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100'
+                : 'bg-[#161618] border-white/10 hover:border-blue-400/40 hover:shadow-lg hover:shadow-blue-900/20'
+            "
+            :style="{ animationDelay: `${i * 60}ms` }"
           >
-            <li class="mr-2">
-              <button
-                class="inline-block px-4 py-3 rounded-lg"
-                :class="{
-                  'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 1,
-                  'hover:text-gray-900': $root.isLightMode,
-                  'hover:text-white': !$root.isLightMode,
-                }"
-                @click="activeTab = 1"
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl p-2.5 transition-transform duration-300 group-hover:scale-110"
+              :class="light ? 'bg-gray-50' : 'bg-white/5'"
+            >
+              <img
+                :alt="item.name"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-contain drop-shadow-lg"
+                :src="item.imageUrl"
+              />
+            </div>
+            <div>
+              <p
+                class="font-semibold text-sm md:text-base"
+                :class="light ? 'text-gray-900' : 'text-gray-100'"
               >
-                Tech Stack
-              </button>
-            </li>
-            <li class="mr-2">
-              <button
-                class="inline-block px-4 py-3 rounded-lg"
-                :class="{
-                  'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 2,
-                  'hover:text-gray-900': $root.isLightMode,
-                  'hover:text-white': !$root.isLightMode,
-                }"
-                @click="activeTab = 2"
-              >
-                Tools
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div v-show="activeTab === 1">
-          <div
-            class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12"
-          >
-            <div v-for="item in tech" :key="item.id">
-              <div
-                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in"
-                >
-                  <img
-                    alt="HTML"
-                    loading="lazy"
-                    width="32"
-                    height="32"
-                    decoding="async"
-                    data-nimg="1"
-                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
-                    :src="item.imageUrl"
-                    style="color: transparent"
-                  />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div
-                    class="tech font-medium text-secondary transition-all duration-300 translate-y-0"
-                  >
-                    {{ item.name }}
-                  </div>
-                  <div
-                    class="status-tech opacity-0 absolute mt-5 text-[10px] text-blue-300 transition-all duration-300 md:text-xs lg:text-sm"
-                  >
-                    {{ item.status }}
-                  </div>
-                </div>
-              </div>
+                {{ item.name }}
+              </p>
+              <p class="text-xs mt-0.5 text-blue-500 font-medium">{{ item.status }}</p>
             </div>
           </div>
         </div>
-        <div v-show="activeTab === 2">
+
+        <div
+          v-else
+          key="tools"
+          class="grid grid-cols-2 gap-3 md:gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        >
           <div
-            class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12"
+            v-for="(item, i) in tools"
+            :key="item.id"
+            class="skill-card group relative flex flex-col items-start gap-3 rounded-2xl border p-4 md:p-5 cursor-pointer transition-all duration-300"
+            :class="
+              light
+                ? 'bg-white border-gray-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100'
+                : 'bg-[#161618] border-white/10 hover:border-blue-400/40 hover:shadow-lg hover:shadow-blue-900/20'
+            "
+            :style="{ animationDelay: `${i * 60}ms` }"
           >
-            <div v-for="item in tools" :key="item.id">
-              <div
-                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3"
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl p-2.5 transition-transform duration-300 group-hover:scale-110"
+              :class="light ? 'bg-gray-50' : 'bg-white/5'"
+            >
+              <img
+                :alt="item.name"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-contain drop-shadow-lg"
+                :src="item.imageUrl"
+              />
+            </div>
+            <div>
+              <p
+                class="font-semibold text-sm md:text-base"
+                :class="light ? 'text-gray-900' : 'text-gray-100'"
               >
-                <div
-                  class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in"
-                >
-                  <img
-                    alt="HTML"
-                    loading="lazy"
-                    width="32"
-                    height="32"
-                    decoding="async"
-                    data-nimg="1"
-                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
-                    :src="item.imageUrl"
-                    style="color: transparent"
-                  />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div
-                    class="tech font-medium text-secondary transition-all duration-300 translate-y-0"
-                  >
-                    {{ item.name }}
-                  </div>
-                  <div
-                    class="status-tech opacity-0 absolute mt-5 text-[10px] text-blue-300 transition-all duration-300 md:text-xs lg:text-sm"
-                  >
-                    {{ item.status }}
-                  </div>
-                </div>
-              </div>
+                {{ item.name }}
+              </p>
+              <p class="text-xs mt-0.5 text-blue-500 font-medium">{{ item.status }}</p>
             </div>
           </div>
         </div>
-      </section>
-    </article>
+      </transition>
+    </section>
   </div>
 </template>
 
-<style>
-.fadein-left {
+<style scoped>
+.skill-card {
   opacity: 0;
-  animation: fadeInLeft 0.5s ease-out forwards;
+  animation: cardIn 0.45s ease-out forwards;
 }
 
-@keyframes fadeInLeft {
-  0% {
+@keyframes cardIn {
+  from {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateY(14px);
   }
-
-  100% {
+  to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-.fadeins-1 {
-  animation-delay: 500ms;
+.tab-fade-enter-active,
+.tab-fade-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.fadeins-2 {
-  animation-delay: 800ms;
+.tab-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
-.img-tech,
-.tech {
-  transition: transform 0.3s ease;
-}
-
-.item-tech:hover .img-tech {
-  transform: scale(1.3);
-}
-
-.item-tech:hover .tech {
-  transform: translateY(-12px);
-}
-
-.item-tech:hover .status-tech {
-  opacity: 1;
+.tab-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 </style>
